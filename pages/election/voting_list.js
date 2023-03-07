@@ -54,7 +54,7 @@ class VotingList extends Component {
             });
 
         } catch(err) {
-            console.log(err.message);
+            // console.log(err.message);
             alert("Redirecting you to login page...");
             Router.pushRoute('/company_login');
         }

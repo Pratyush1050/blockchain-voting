@@ -73,7 +73,7 @@ class VotingList extends Component {
       });
       this.setState({ item: items });
     } catch (err) {
-      console.log(err.message);
+      // console.log(err.message);
       alert("Redirecting you to login page...");
       Router.pushRoute("/company_login");
     }
@@ -95,7 +95,7 @@ class VotingList extends Component {
   };
 
   renderTable = () => {
-    console.log(this.state.item)
+    // console.log(this.state.item)
     return <Card.Group items={this.state.item} />;
   };
 

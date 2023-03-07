@@ -3,7 +3,9 @@ import ElectionFactory from './Build/ElectionFact.json';
 
 const instance = new web3.eth.Contract(
 	JSON.parse(ElectionFactory.interface),
-    '0xb97C463F5D47151340E7b7Dd3cf86B2c5CC0309C'
+    '0x3196832A83F20D94123427B8A10Dda745b064FE2'
 );
 
 export default instance;
+//0x861634Fb4a5bb74167F46228Ed98e0B0f959A2F2 second deployed address
+// 0xD6cB8679D8FCB3FB43da51592ec7331C4c362dcE third  deployed address 

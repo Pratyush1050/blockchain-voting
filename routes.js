@@ -1,6 +1,7 @@
 const routes = require('next-routes')();
 
 routes
+    // .add('/','/homepage')
     .add('/homepage','/homepage')
     .add('/company_login','/company_login')
     .add('/voter_login','/voter_login')

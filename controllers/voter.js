@@ -17,6 +17,7 @@ module.exports = {
 					cb(err);
 				} else {
 					if (!result) {
+						// console.log(req.body);
 						VoterModel.create(
 							{
 								email: req.body.email,
@@ -65,7 +66,7 @@ module.exports = {
 
 											console.log(err);
 										} else {
-											console.log(info);
+											// console.log(info);
 
 											res.json({
 												status: 'success',

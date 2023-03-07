@@ -3,9 +3,13 @@ const HDWalletProvider = require('truffle-hdwallet-provider');
 const Web3 = require('web3');
 const eF = require('./Build/ElectionFact.json');
 
+// const provider = new HDWalletProvider(
+// 	'festival arrow check appear dragon small inform member young truck sentence jar',
+// 	'https://goerli.infura.io/v3/4eeac7032675460fa3803071c53acec7'
+// );
 const provider = new HDWalletProvider(
-	'festival arrow check appear dragon small inform member young truck sentence jar',
-	'https://goerli.infura.io/v3/4eeac7032675460fa3803071c53acec7'
+	'snake soldier copper detail dinosaur knife wire kitten child later crush decide',
+	'http://127.0.0.1:8545'
 );
 const web3 = new Web3(provider);
 

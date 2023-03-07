@@ -13,8 +13,8 @@ export default props => {
 			<Menu secondary style={{ maxHeight: '50px' }}>
 				<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 				<Menu.Item
-					name="BlockVotes"
-					style={{ verticalAlign: 'middle', fontSize: '40px', paddingLeft: '42%', paddingTop: '4%' }}
+					name="Blockchain Voting"
+					style={{ verticalAlign: 'middle', fontSize: '40px', paddingLeft: '30%', paddingTop: '4%' }}
 				/>
 				<Menu.Menu position="right">
 					<Menu.Item icon="user" />

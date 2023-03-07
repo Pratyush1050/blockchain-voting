@@ -64,7 +64,7 @@ class VotingList extends Component {
             const c = await election.methods.getNumOfCandidates().call();
             let candidates = [];
             for(let i=0 ; i<c; i++) {
-                console.log(election.methods.getCandidate(i).call());
+                // console.log(election.methods.getCandidate(i).call());
                 candidates.push(await election.methods.getCandidate(i).call());
             }
         let i=-1;
@@ -88,7 +88,7 @@ class VotingList extends Component {
         });
         this.setState({item: items}); 
         } catch(err) {
-            console.log(err.message);
+            // console.log(err.message);
             alert("Session expired. Redirecting you to login page...");
             Router.pushRoute('/voter_login');
         }

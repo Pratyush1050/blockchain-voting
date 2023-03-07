@@ -13,8 +13,8 @@ module.exports = {
 		const mailOptions = {
 			from: process.env.EMAIL,
 			to: req.body.email,
-			subject: req.body.election_name + 'Registration',
-			html: 'Congrats you have been registered for  ' + req.body.election_name + ' election.',
+			subject: req.body.election_name + 'Candidate Registration',
+			html: 'Congrats you have been registered as a candidate for  ' + req.body.election_name + ' election.',
 		};
 		transporter.sendMail(mailOptions, function (err, info) {
 			if (err) {

@@ -18,11 +18,13 @@ class LoginForm extends Component {
 		this.setState({ loading: true, errorMess: '' });
 		try {
 			const email = Cookies.get('company_email');
+			console.log("email",email);
 			const accounts = await web3.eth.getAccounts();
+			console.log("account",accounts[0]);
 			const bool = await Election_Factory.methods
 				.createElection(email, this.state.election_name, this.state.election_description)
 				.send({ from: accounts[0] });
-
+			console.log("bool:",bool);
 			if (bool) {
 				const summary = await Election_Factory.methods.getDeployedElection('xyz').call();
 				this.setState({ loading: false });

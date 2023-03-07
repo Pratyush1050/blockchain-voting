@@ -24,7 +24,7 @@ class DividerExampleVerticalForm extends Component {
             width:100vw;
             height:100vh;
             position:absolute; 
-            background: url('../../static/blockchain.jpg') no-repeat;
+            background: url('/static/blockchain.jpg') no-repeat;
             z-index: -1;
         }
       `}</style>
@@ -122,14 +122,8 @@ class DividerExampleVerticalForm extends Component {
         <div>
           {this.returnBackImage()}
 
-          <Button.Group style={{ marginLeft: "43%" }}>
-            <Button
-              primary
-              content={visible ? "Sign in" : "Sign Up"}
-              onClick={this.toggleVisibility}
-            />
-          </Button.Group>
-          <Divider style={{ zIndex: "-10" }} />
+          
+          {/* <Divider style={{ zIndex: "-10" }} /> */}
           <Grid className="grid1">
             <Grid.Row>
               <Grid.Column
@@ -222,7 +216,17 @@ class DividerExampleVerticalForm extends Component {
                 </Segment>
               </Grid.Column>
             </Grid.Row>
+
+            <Button.Group style={{ marginLeft: "43%" }}>
+            <Button
+              primary
+              content={visible ? "Sign in" : "Sign Up"}
+              onClick={this.toggleVisibility}
+            />
+          </Button.Group>
           </Grid>
+
+          
         </div>
       </div>
     );

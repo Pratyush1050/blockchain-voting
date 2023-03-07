@@ -62,6 +62,9 @@ contract Election {
 
     mapping(uint8=>Candidate) public candidates;
 
+    //register mapping
+    mapping (string => bool) isRegistered;
+
     //voter election_description
 
     struct Voter {
@@ -84,13 +87,21 @@ contract Election {
     //function to add candidate to mapping
 
     function addCandidate(string memory candidate_name, string memory candidate_description, string memory imgHash,string memory email) public owner {
+        //if true the candidate will be registered
+        require(status, "Error:The election has been closed");
+        //if true the candidate will be registered
+        require(!isRegistered[email], "This e-mail is already registered");
+
         uint8 candidateID = numCandidates++; //assign id of the candidate
         candidates[candidateID] = Candidate(candidate_name,candidate_description,imgHash,0,email); //add the values to the mapping
+        //add email to isRegistered mapp
+        isRegistered[email] = true;
     }
     //function to vote and check for double voting
 
     function vote(uint8 candidateID,string e) public {
 
+        require(status, "Error:The election has been closed.");
         //if false the vote will be registered
         require(!voters[e].voted, "Error:You cannot double vote");
         
@@ -120,7 +131,7 @@ contract Election {
 
     //function to return winner candidate information
 
-    function winnerCandidate() public view owner returns (uint8) {
+    function winnerCandidate() public view returns (uint8) {
         uint8 largestVotes = candidates[0].voteCount;
         uint8 candidateID;
         for(uint8 i = 1;i<numCandidates;i++) {
@@ -134,5 +145,15 @@ contract Election {
     
     function getElectionDetails() public view returns(string, string) {
         return (election_name,election_description);    
+    }
+
+    //function to end election
+    function endElection() public{
+        status = false;
+    }
+
+    //function to return election status
+    function electionStatus() public view returns(bool){
+        return status;
     }
 }
